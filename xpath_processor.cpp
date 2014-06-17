@@ -798,6 +798,7 @@ void xpath_processor::v_execute_one (
             if (! o_skip_only)
             {
                S_name = S_pop_string ();
+               if (erpp_arg)
                v_execute_function (S_name, u_variable, erpp_arg);
             }
          }
