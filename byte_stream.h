@@ -50,11 +50,19 @@ public :
    /// constructor
    byte_stream (const char * cp_in)
    {
-      u_length = strlen (cp_in) + 1;
-      bp_in = new _byte_ [u_length] ;
-      memcpy (bp_in, cp_in, u_length);
-      bp_current = bp_in;
-      bp_end = bp_in + u_length - 1;
+      if(cp_in)
+      {
+         u_length = strlen (cp_in) + 1;
+         bp_in = new _byte_ [u_length] ;
+         memcpy (bp_in, cp_in, u_length);
+         bp_current = bp_in;
+         bp_end = bp_in + u_length - 1;
+      }
+      else
+      {
+         u_length = 0;
+         bp_in = bp_current = bp_end = 0;
+      }
       o_valid = (bp_current != bp_end);
    }
    /// destructor
