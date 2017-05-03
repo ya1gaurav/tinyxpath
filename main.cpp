@@ -149,8 +149,6 @@ int main ()
 
    fprintf (Fp_out_html, "<h2>Results</h2>\n");
 
-   TiXmlElement * XEp_sub = XEp_main -> FirstChildElement ("b");
-
    v_test_one_string (XEp_main, "/a/*[name()!='b']", "x");
    v_test_one_string (XEp_main, "//b/@val", "123" ); 
 
